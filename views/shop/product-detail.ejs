@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+    <title><%= product.title %></title>
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="center">
+        <h1><%=product.title %></h1>
+        <hr/>
+        <div>
+            <img src="<%= product.imageUrl %>" alt="<%=product.title %>"/>
+        </div>
+        <h2><%=product.price %></h2>
+        <p><%=product.description %></p>
+        <form action="/cart" method="post">
+            <button class="btn">Add to Cart</button>
+            <input name="productId" type="hidden" value="<%= product.id %>" />
+            <input name="productPrice" type="hidden" value="<%= product.price %>" />
+        </form>
+    </main>
+    <%- include('../includes/end.ejs') %>
+</body>
+</html>

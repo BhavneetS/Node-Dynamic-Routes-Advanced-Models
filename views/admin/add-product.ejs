@@ -8,6 +8,10 @@
 
     <main>
         <form class="product-form" action="/admin/add-product" method="POST">
+            <!-- 
+                For POST forms, each named control is submitted as a key-value pair
+                in req.body, provided URL-encoded body parsing middleware is enabled. 
+            -->
             <div class="form-control">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title">
